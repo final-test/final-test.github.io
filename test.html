@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<meta name="generator" content="bd-mobcard">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" >
+$(function(){
+	$('#begin_2').click(function() {
+        $('.whole_div').css('display', 'none');
+        $('.test:first').css('display', 'block');
+        setTimeout(function () {$('#watch_video_delay').css('visibility', 'visible');
+        }, 1000);
+        setTimeout(function () {
+            $('#video1').css('visibility', 'visible');
+        	document.getElementById("video1").play();
+            }, 1500);
+    });
+    document.getElementById("video1").addEventListener("ended",function(){
+        	$(this).addClass('on');
+            $(this).parents('div').css('display','none');
+            $(this).parents('div').next('div').css('display','block');
+    });
+    document.getElementById("video2").addEventListener("ended",function(){
+      	$(this).addClass('on');
+        $(this).parents('div').css('display','none');
+      	$(this).parents('div').next('div').css('display','block');
+    });
+    document.getElementById("video3").addEventListener("ended",function(){
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+    document.getElementById("video4").addEventListener("ended",function(){
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+
+	$('#next_page').click(function () {
+        $(this).addClass('on');
+        document.getElementById("video1").pause();
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+    $('#next_page2').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+    $('#next_page3').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+        setTimeout(function () {
+            document.getElementById("video2").play();
+        }, 1000);
+    });
+    $('#next_page4').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+        setTimeout(function () {
+            document.getElementById("video3").play();
+        }, 1000);
+    });
+    $('#next_page5').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+        setTimeout(function () {
+            document.getElementById("video4").play();
+        }, 1000);
+    });
+    $('#next_page6').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+    $('#next_page7').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $(this).parents('div').next('div').css('display','block');
+    });
+    $('#next_page8').click(function () {
+        $(this).addClass('on');
+        $(this).parents('div').css('display','none');
+        $('#level1').css('display','block');
+    });
+	$('#play_video1').click(function () {
+        document.getElementById("video1").play();
+        $(this).hide();
+    });
+	$('li').click(function(){
+		$(this).addClass('on');
+          //  alert(   $(this).html());
+		var select=$(this).children(':radio').val();
+		var answer=$(this).parents('div').children(':hidden').val();
+//           s alert($(this).children(':radio').val());
+		var sumScore=$('#sumScore').val();
+		if(select===answer){
+			$('#sumScore').val(parseInt(sumScore)+1);
+		}
+//            alert( $(this).parents('.test').css('display'));
+		$(this).parents('div').css('display','none');
+		if( $(this).parents('div').next('div').hasClass('end')){
+				 $('#level1').css('display','block');
+		}else{
+			   $(this).parents('div').next('div').css('display','block');
+            }
+//            alert( $(this).parents('div').next('div').html());
+	});
+	
+ $(':radio').click(function(){
+		 $(this).parents('li').addClass('on');
+//             alert( $(this).parents('li').html());
+		var select=$(this).val();
+		var answer=$(this).parents('div').children(':hidden').val();
+		var sumScore=$('#sumScore').val();
+		if(select===answer){
+			$('#sumScore').val(parseInt(sumScore)+1);
+		}
+//            alert( $(this).parents('.test').css('display'));
+		$(this).parents('div').css('display','none');
+		if( $(this).parents('div').next('div').hasClass('end')){
+            $('#level1').css('display','block');
+		}else{
+                $(this).parents('div').next('div').css('display','block');
+		}
+//            alert( $(this).parents('div').next('div').html());
+	});});
+
+//        $('.ask').click(function(){
+//            $(this).parents('div').css('display','none');
+//            $(this).parents('div').next('div').css('display','block');
+//            var select=$(this).parents('div').find(':radio:checked').val();
+//            alert(select);
+//        });
+</script>      
+       
+<title>Listening Test</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<!--开始考试界面-->
+<div class="whole_div">
+	<div class="topbox" id='title'>
+		<div class="tb_txt"><span id="ft">Listening Test</span></div>
+	</div>
+	<div class="tb_txt1"><span id="ft">Introduction：</span></div>
+	<div class="con">
+		<div class="test_p">
+			In this part, you are going to watch a short video about interview. There are five sections.  You will have 30 minutes in total to finish all the sections (time of video is excluded).
+        </div>
+		<a  id="begin_2" class="test_a"><img src="img/btn.png" alt=""/></a>
+	</div>
+</div>
+
+<!--第一个视频界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>For Sections 1 and 2, you are going to watch the video once only.</span> </div>
+			<br/>
+			<div class="tit-1" id="watch_video_delay"><span>Now, watch the video carefully. </div>
+			<br/>
+			<video width="60%" height="60%" id="video1">
+				<source src="video/video0.mp4" type="video/mp4">
+			</video>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page">Next</button>
+		</div>
+	</div>
+</div>
+<!--section1界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>Section One. Main ideas (2 points).</span></div>
+			<br/>
+			<div class="tit"><span>Write a short summary of the video passage (1-2 sentences).</span> </div>
+			<br/>
+			<textarea rows="5" id="text-sc1"></textarea>
+			<br/>
+			<br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page2">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--Section2界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<br/>
+			<div class="tit-1"><span>Sections Two. Important Details (4 points).</span> </div>
+			<br/>
+			<div class="tit"><span> According to the video, what are the important behaviors concerned in an interview for interviewees. (Please list as phrases).</span> </div>
+			<br/>
+			<table border="1.5" width="55%">
+				<tr align="center">
+					<th width="50%">Positive side</th>
+					<th width="50%">Negative side</th>
+				</tr>
+				<tr>
+					<td contentEditable="true"></td>
+					<td contentEditable="true"></td>
+				</tr>
+				<tr>
+					<td contentEditable="true"></td>
+					<td contentEditable="true"></td>
+				</tr>
+				<tr>
+					<td contentEditable="true"></td>
+					<td contentEditable="true"></td>
+				</tr>
+				<tr>
+					<td contentEditable="true"></td>
+					<td contentEditable="true"></td>
+				</tr>
+				<tr>
+					<td contentEditable="true"></td>
+					<td contentEditable="true"></td>
+				</tr>
+			</table>
+			<br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page3">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--第二个视频界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<br/>
+			<div class="tit-1" id="watch_video_delay2"><span>Watch again to part of the video, then answer the first question of Section 3.</span> </div>
+			<br/><br/>
+			<video width="60%" height="60%" id="video2">
+				<source src="video/video1.mp4" type="video/mp4">
+			</video>
+			<br/>
+		</div>
+	</div>
+</div>
+
+<!--Section3-1界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<br/>
+			<div class="tit-1"><span>Section Three. Implications.</span></div>
+			<br/>
+			<div class="tit-1"><span>
+1. Why did the interviewer think that: “hmm...what should I have for lunch today” when the interviewee was making the self-introduction? Please use the information from the video to support your argument (no more than 3 sentences). (4 points)
+</span> </div>
+			<br/>
+			<textarea rows="5" id="text-sc3-1"></textarea>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page4">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--Section3-2视频界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>2. Watch again part of the video, and then answer the question：</span></div>
+			<br/>
+			<div class="tit"><span>Why does the interviewee say this?</span> </div>
+			<br/>
+			<video width="60%" height="60%" id="video3">
+				<source src="video/video2.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+</div>
+
+<!--Section3-2题目界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<br/>
+			<div class="tit-1"><span>2. Why does the interviewee say this?</span></div>
+			<br/>
+			<div class="tit">Please use the information from the video to support your argument (no more than 3 sentences). (4 points)<span></span> </div>
+			<br/>
+			<textarea rows="5" id="text-sc3-2"></textarea>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page5">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--第四个视频界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<br/>
+			<div class="tit-1" id="watch_video_delay3"><span>Now, watch part of the video again, then answer Sections 4 and 5.
+ (11 points)
+</span> </div>
+			<br/>
+			<video width="60%" height="60%" id="video4">
+				<source src="video/video3.mp4" type="video/mp4">
+			</video>
+			<br/>
+		</div>
+	</div>
+</div>
+
+<!--Section4-1界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>Section Four. Comparing Cultural Perspectives (11 points)</span></div>
+			<br/>
+			<div class="tit-1"><span>1. What does the inappropriate questions mentioned in the video reveal about the American cultural perspectives in terms of privacy? (4 points) </span></div>
+			<br/>
+			<textarea rows="5" id="text-sc4-1"></textarea>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page6">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--Section4-2界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>Section Four. Comparing Cultural Perspectives (11 points)</span></div>
+			<br/>
+			<div class="tit-1"><span>2.	Based on the video, what are some cultural similarities and/or differences between the United States and China? (7 points) </span></div>
+			<br/>
+			<textarea rows="5" id="text-sc4-2"></textarea>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page7">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--Section5界面-->
+<div class="test">
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<div class="test_con">
+		<div class="item">
+			<div class="tit-1"><span>Section Five. Personal Reaction (5 points) </span></div>
+			<br/>
+			<div class="tit-1"><span>What do you think of the viewpoint of the illegality of the interviewer asking the personal questions during the interview? Do you agree or disagree with it? Include information from the video in order to support your answer (no more than 6 sentences). </span></div>
+			<br/>
+			<textarea rows="5" id="text-sc5"></textarea>
+			<br/><br/>
+			<button class="btn btn-lg btn-success" type="button" id="next_page8">Next</button>
+		</div>
+	</div>
+</div>
+
+<!--最终界面-->
+<div class="test end" id='level1'>
+     <div class="score" ><img src="" alt=""/></div>
+	<div class="test_con">
+		<div class="answer_con">
+			<h1>Good job!</h1>
+			<p>
+			<span>This is the end of the listening test. Good job! You will get your feedback as soon as possible.</span><br/>
+			</p>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>

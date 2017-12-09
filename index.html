@@ -14,13 +14,25 @@ $(function(){
 	$('#begin_2').click(function() {
         $('.whole_div').css('display', 'none');
         $('.test:first').css('display', 'block');
-        setTimeout(function () {$('#watch_video_delay').css('visibility', 'visible');
-        }, 1000);
-        setTimeout(function () {
-            $('#video1').css('visibility', 'visible');
-        	document.getElementById("video1").play();
-            }, 1500);
     });
+
+	$('#play1').click(function () {
+	    $(this).hide();
+        document.getElementById("video1").play();
+    });
+    $('#play2').click(function () {
+        $(this).hide();
+        document.getElementById("video2").play();
+    });
+    $('#play3').click(function () {
+        $(this).hide();
+        document.getElementById("video3").play();
+    });
+    $('#play4').click(function () {
+        $(this).hide();
+        document.getElementById("video4").play();
+    });
+
     document.getElementById("video1").addEventListener("ended",function(){
         	$(this).addClass('on');
             $(this).parents('div').css('display','none');
@@ -57,25 +69,16 @@ $(function(){
         $(this).addClass('on');
         $(this).parents('div').css('display','none');
         $(this).parents('div').next('div').css('display','block');
-        setTimeout(function () {
-            document.getElementById("video2").play();
-        }, 1000);
     });
     $('#next_page4').click(function () {
         $(this).addClass('on');
         $(this).parents('div').css('display','none');
         $(this).parents('div').next('div').css('display','block');
-        setTimeout(function () {
-            document.getElementById("video3").play();
-        }, 1000);
     });
     $('#next_page5').click(function () {
         $(this).addClass('on');
         $(this).parents('div').css('display','none');
         $(this).parents('div').next('div').css('display','block');
-        setTimeout(function () {
-            document.getElementById("video4").play();
-        }, 1000);
     });
     $('#next_page6').click(function () {
         $(this).addClass('on');
@@ -153,14 +156,14 @@ $(function(){
 <!--开始考试界面-->
 <div class="whole_div">
 	<div class="topbox" id='title'>
-		<div class="tb_txt"><span id="ft">Listening Test</span></div>
+		<div class="tb_txt"><span id="ft"><b>Listening Test</b></span></div>
 	</div>
 	<div class="tb_txt1"><span id="ft">Introduction：</span></div>
 	<div class="con">
 		<div class="test_p">
 			In this part, you are going to watch a short video about interview. There are five sections.  You will have 30 minutes in total to finish all the sections (time of video is excluded).
         </div>
-		<a  id="begin_2" class="test_a"><img src="img/btn.png" alt=""/></a>
+		<a  id="begin_2" type="button" class="btn-lg btn-warning test_a"><b>Begin Test&nbsp;&nbsp;</b><label class="glyphicon glyphicon-hand-right"> </label></a>
 	</div>
 </div>
 
@@ -169,14 +172,17 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>For Sections 1 and 2, you are going to watch the video once only.</span> </div>
 			<br/>
 			<div class="tit-1" id="watch_video_delay"><span>Now, watch the video carefully. </div>
 			<br/>
+			<p class="play-tips">Click “Play” to watch the video.</p>
 			<video width="60%" height="60%" id="video1">
 				<source src="video/video0.mp4" type="video/mp4">
 			</video>
 			<br/><br/>
+			<button class="btn btn-lg btn-primary" type="button" id="play1">Play</button>
 			<button class="btn btn-lg btn-success" type="button" id="next_page">Next</button>
 		</div>
 	</div>
@@ -186,9 +192,10 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>Section One. Main ideas (2 points).</span></div>
 			<br/>
-			<div class="tit"><span>Write a short summary of the video passage (1-2 sentences).</span> </div>
+			<div class="tit"><span>Write a short summary of the video (1-2 sentences).</span> </div>
 			<br/>
 			<textarea rows="5" id="text-sc1"></textarea>
 			<br/>
@@ -208,7 +215,7 @@ $(function(){
 			<br/>
 			<div class="tit"><span> According to the video, what are the important behaviors concerned in an interview for interviewees. (Please list as phrases).</span> </div>
 			<br/>
-			<table border="1.5" width="55%">
+			<table border="1.5" width="80%">
 				<tr align="center">
 					<th width="50%">Positive side</th>
 					<th width="50%">Negative side</th>
@@ -247,11 +254,13 @@ $(function(){
 		<div class="item">
 			<br/>
 			<div class="tit-1" id="watch_video_delay2"><span>Watch again to part of the video, then answer the first question of Section 3.</span> </div>
-			<br/><br/>
+			<br/>
+			<p class="play-tips">Click “Play” to watch the video.</p>
 			<video width="60%" height="60%" id="video2">
 				<source src="video/video1.mp4" type="video/mp4">
 			</video>
-			<br/>
+			<br/><br/>
+			<button class="btn btn-lg btn-primary" type="button" id="play2">Play</button>
 		</div>
 	</div>
 </div>
@@ -280,13 +289,17 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>2. Watch again part of the video, and then answer the question：</span></div>
 			<br/>
 			<div class="tit"><span>Why does the interviewee say this?</span> </div>
 			<br/>
+			<p class="play-tips">Click “Play” to watch the video.</p>
 			<video width="60%" height="60%" id="video3">
 				<source src="video/video2.mp4" type="video/mp4">
 			</video>
+			<br/><br/>
+			<button class="btn btn-lg btn-primary" type="button" id="play3">Play</button>
 		</div>
 	</div>
 </div>
@@ -294,6 +307,7 @@ $(function(){
 <!--Section3-2题目界面-->
 <div class="test">
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
+	<br/>
 	<div class="test_con">
 		<div class="item">
 			<br/>
@@ -318,10 +332,12 @@ $(function(){
  (11 points)
 </span> </div>
 			<br/>
+			<p class="play-tips">Click “Play” to watch the video.</p>
 			<video width="60%" height="60%" id="video4">
 				<source src="video/video3.mp4" type="video/mp4">
 			</video>
-			<br/>
+			<br/><br/>
+			<button class="btn btn-lg btn-primary" type="button" id="play4">Play</button>
 		</div>
 	</div>
 </div>
@@ -331,6 +347,7 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>Section Four. Comparing Cultural Perspectives (11 points)</span></div>
 			<br/>
 			<div class="tit-1"><span>1. What does the inappropriate questions mentioned in the video reveal about the American cultural perspectives in terms of privacy? (4 points) </span></div>
@@ -347,6 +364,7 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>Section Four. Comparing Cultural Perspectives (11 points)</span></div>
 			<br/>
 			<div class="tit-1"><span>2.	Based on the video, what are some cultural similarities and/or differences between the United States and China? (7 points) </span></div>
@@ -363,6 +381,7 @@ $(function(){
 	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="item">
+			<br/>
 			<div class="tit-1"><span>Section Five. Personal Reaction (5 points) </span></div>
 			<br/>
 			<div class="tit-1"><span>What do you think of the viewpoint of the illegality of the interviewer asking the personal questions during the interview? Do you agree or disagree with it? Include information from the video in order to support your answer (no more than 6 sentences). </span></div>

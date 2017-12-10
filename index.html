@@ -9,142 +9,7 @@
 
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" >
-$(function(){
-	$('#begin_2').click(function() {
-        $('.whole_div').css('display', 'none');
-        $('.test:first').css('display', 'block');
-    });
-
-	$('#play1').click(function () {
-	    $(this).hide();
-        document.getElementById("video1").play();
-    });
-    $('#play2').click(function () {
-        $(this).hide();
-        document.getElementById("video2").play();
-    });
-    $('#play3').click(function () {
-        $(this).hide();
-        document.getElementById("video3").play();
-    });
-    $('#play4').click(function () {
-        $(this).hide();
-        document.getElementById("video4").play();
-    });
-
-    document.getElementById("video1").addEventListener("ended",function(){
-        	$(this).addClass('on');
-            $(this).parents('div').css('display','none');
-            $(this).parents('div').next('div').css('display','block');
-    });
-    document.getElementById("video2").addEventListener("ended",function(){
-      	$(this).addClass('on');
-        $(this).parents('div').css('display','none');
-      	$(this).parents('div').next('div').css('display','block');
-    });
-    document.getElementById("video3").addEventListener("ended",function(){
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    document.getElementById("video4").addEventListener("ended",function(){
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-
-	$('#next_page').click(function () {
-        $(this).addClass('on');
-        document.getElementById("video1").pause();
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page2').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page3').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page4').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page5').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page6').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page7').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $(this).parents('div').next('div').css('display','block');
-    });
-    $('#next_page8').click(function () {
-        $(this).addClass('on');
-        $(this).parents('div').css('display','none');
-        $('#level1').css('display','block');
-    });
-	$('#play_video1').click(function () {
-        document.getElementById("video1").play();
-        $(this).hide();
-    });
-	$('li').click(function(){
-		$(this).addClass('on');
-          //  alert(   $(this).html());
-		var select=$(this).children(':radio').val();
-		var answer=$(this).parents('div').children(':hidden').val();
-//           s alert($(this).children(':radio').val());
-		var sumScore=$('#sumScore').val();
-		if(select===answer){
-			$('#sumScore').val(parseInt(sumScore)+1);
-		}
-//            alert( $(this).parents('.test').css('display'));
-		$(this).parents('div').css('display','none');
-		if( $(this).parents('div').next('div').hasClass('end')){
-				 $('#level1').css('display','block');
-		}else{
-			   $(this).parents('div').next('div').css('display','block');
-            }
-//            alert( $(this).parents('div').next('div').html());
-	});
-	
- $(':radio').click(function(){
-		 $(this).parents('li').addClass('on');
-//             alert( $(this).parents('li').html());
-		var select=$(this).val();
-		var answer=$(this).parents('div').children(':hidden').val();
-		var sumScore=$('#sumScore').val();
-		if(select===answer){
-			$('#sumScore').val(parseInt(sumScore)+1);
-		}
-//            alert( $(this).parents('.test').css('display'));
-		$(this).parents('div').css('display','none');
-		if( $(this).parents('div').next('div').hasClass('end')){
-            $('#level1').css('display','block');
-		}else{
-                $(this).parents('div').next('div').css('display','block');
-		}
-//            alert( $(this).parents('div').next('div').html());
-	});});
-
-//        $('.ask').click(function(){
-//            $(this).parents('div').css('display','none');
-//            $(this).parents('div').next('div').css('display','block');
-//            var select=$(this).parents('div').find(':radio:checked').val();
-//            alert(select);
-//        });
-</script>      
+	<script type="text/javascript" src="js/text-controler.js"></script>
        
 <title>Listening Test</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -219,24 +84,24 @@ $(function(){
 					<th width="50%">Negative side</th>
 				</tr>
 				<tr>
-					<td contentEditable="true"></td>
-					<td contentEditable="true"></td>
+					<td contentEditable="true"><span><input type="text" id="table-positive-1"></span></td>
+					<td contentEditable="true"><span><input type="text" id="table-negative-1"></span></td>
 				</tr>
 				<tr>
-					<td contentEditable="true"></td>
-					<td contentEditable="true"></td>
+					<td contentEditable="true"><span><input type="text" id="table-positive-2"></span></td>
+					<td contentEditable="true"><span><input type="text" id="table-negative-2"></span></td>
 				</tr>
 				<tr>
-					<td contentEditable="true"></td>
-					<td contentEditable="true"></td>
+					<td contentEditable="true"><span><input type="text" id="table-positive-3"></span></td>
+					<td contentEditable="true"><span><input type="text" id="table-negative-3"></span></td>
 				</tr>
 				<tr>
-					<td contentEditable="true"></td>
-					<td contentEditable="true"></td>
+					<td contentEditable="true"><span><input type="text" id="table-positive-4"></span></td>
+					<td contentEditable="true"><span><input type="text" id="table-negative-4"></span></td>
 				</tr>
 				<tr>
-					<td contentEditable="true"></td>
-					<td contentEditable="true"></td>
+					<td contentEditable="true"><span><input type="text" id="table-positive-5"></span></td>
+					<td contentEditable="true"><span><input type="text" id="table-negative-5"></span></td>
 				</tr>
 			</table>
 			<br/>
@@ -261,6 +126,7 @@ $(function(){
 			</video>
 			<br/><br/>
 			<button class="btn btn-lg btn-primary" type="button" id="play2">Play</button>
+			<button class="btn btn-lg btn-success" type="button" id="next_page-v1">Next</button>
 		</div>
 	</div>
 </div>
@@ -300,6 +166,7 @@ $(function(){
 			</video>
 			<br/><br/>
 			<button class="btn btn-lg btn-primary" type="button" id="play3">Play</button>
+			<button class="btn btn-lg btn-success" type="button" id="next_page-v2">Next</button>
 		</div>
 	</div>
 </div>
@@ -337,6 +204,7 @@ $(function(){
 			</video>
 			<br/><br/>
 			<button class="btn btn-lg btn-primary" type="button" id="play4">Play</button>
+			<button class="btn btn-lg btn-success" type="button" id="next_page-v3">Next</button>
 		</div>
 	</div>
 </div>
@@ -394,16 +262,51 @@ $(function(){
 
 <!--最终界面-->
 <div class="test end" id='level1'>
-     <div class="score" ><img src="" alt=""/></div>
+	<div class="score"  ><img src="img/test_bg.png" alt="" style="border:none;border-radius:0px;"/></div>
 	<div class="test_con">
 		<div class="answer_con">
-			<h1>Good job!</h1>
-			<p>
-			<span>This is the end of the listening test. Good job! You will get your feedback as soon as possible.</span><br/>
-			</p>
-		</div>
-		
+				<span class="answer_con_span">This is the end of the listening test. Good job! </span><br/>
+				<hr/>
+				<span class="section-title">Section One</span><br/>
+				<span class="section-title2">1. Write a short summary of the video.</span><br/>
+				<span id="section-one" class="section-title3"></span><br/>
+
+				<span class="section-title">Section Two</span><br/>
+				<span class="section-title2">What are the important behaviors concerned in an interview for interviewees? </span><br/>
+			<table border="1.5" width="70%">
+				<tr align="center">
+					<th width="50%">1. Positive side</th>
+					<th width="50%">2. Negative side</th>
+				</tr>
+				<tr>
+					<td contentEditable="true" id="section-two-po"></td>
+					<td contentEditable="true" id="section-two-ne"></td>
+				</tr>
+			</table>
+			<br/>
+				<span class="section-title">Section Three</span><br/>
+				<span class="section-title2">1. Why did the interviewer think that “hmm...what should I have for lunch today” when the interviewee was making the self-introduction?</span><br/>
+				<span id="section-three-1" class="section-title3"></span><br/>
+				<span class="section-title2">2. Why does the interviewee say this?</span><br/>
+				<span id="section-three-2" class="section-title3"></span><br/>
+
+				<span class="section-title">Section Four</span><br/>
+				<span class="section-title2">1. What does the inappropriate questions mentioned in the video reveal about the American cultural perspectives in terms of privacy?</span><br/>
+				<span id="section-four-1" class="section-title3"></span><br/>
+				<span class="section-title2">2. Based on the video, what are some cultural similarities and/or differences between the United States and China?</span><br/>
+				<span id="section-four-2" class="section-title3"></span><br/>
+
+				<span class="section-title">Section Five</span><br/>
+				<span class="section-title2">What do you think of the viewpoint that it is illegal for interviewer to ask the personal questions during the interview? Do you agree or disagree with it?</span><br/>
+				<span id="section-five" class="section-title3"></span><br/><hr>
+
+				<span class="answer_con_span">The above is your answers, you will get your feedback as soon as possible.</span><br/>
+				<br/>
+				<br/>
+			<h1><label class="glyphicon glyphicon glyphicon-star-empty"> </label> END <label class="glyphicon glyphicon glyphicon-star-empty"> </label></h1>
+	</div>
 	</div>
 </div>
+<input type="hidden" name='answer-sum' id='answer-sum' value="Your Answers: \n">
 </body>
 </html>

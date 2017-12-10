@@ -5,14 +5,15 @@ html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,blockquote,pre,form,input,te
 	padding:0;
 	color: #333;
 	font-size: 16px;
-}body,button,input,
+}body,button,
 body{
 	 font-family: "Mircrosoft Yahei", arail, sans-serif;
 	background:#f8efe8 url(../img/websiteBackground.jpg) repeat-x left top;
  }
 
+ input{width:100%;border:hidden;height: 100%;}
 ul,li{ list-style:none;}
-img,input{ border:0;}
+img{ border:0;}
 a{text-decoration:none;outline:one; }
 
 th{
@@ -121,9 +122,12 @@ td{
 	width:80%;
 }
 .answer{width:auto;margin:0px auto 0px auto;min-height:290px;padding:20px 20px 11px 20px;background-color:#b3b3b3}
-.answer_con h1{color:#de0b07;font-size:20px;font-weight:bold;text-align:center;border-bottom:1px solid #fff;padding-bottom:5px;}
+.answer_con h1{color:#de0b07;font-size:25px;font-weight:bold;text-align:center;border-bottom:1px solid #fff;padding-bottom:5px;}
 .answer_con p{color:#222;font-size:16px;padding:5px 0px;line-height:24px;}
-.answer_con p span{color:#222;font-size:18px;font-weight:bold;}
+.answer_con_span{color:#222;font-size:23px;font-weight:bold;}
+.section-title{color:#5e5e5e;font-size:19px;font-weight:bolder;}
+.section-title2{color:black;font-size:20px;font-weight:normal;}
+.section-title3{color:#222;font-size:17px;font-weight:normal;}
 .score{text-align:center;position:absolute;width:65px;height:65px;margin: 0px auto;left: 0;bottom: 0;right: 0;top: -41px;}
 .score img{}
 .share{margin:10px auto 20px auto;text-align:center;}
